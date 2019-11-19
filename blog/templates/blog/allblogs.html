@@ -1,0 +1,29 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <h1 class="text text-center" >Welcome to Mjomba's blog </h1>
+        </div>
+
+        <div class="row">
+          <h2>Latest posts</h2>
+        </div>
+
+        <hr/>
+        <ul>
+          {% for blog in blogs.all %}
+          <li><a href="{% url 'detail' blog.id%}"><h3>{{ blog.title }}</h3></a>
+            {{ blog.pub_date_pretty }}
+            <br>
+            <img src="{{ blog.image.url }}" height="200" width="300" class="rounded" alt="">
+            <br>
+            <p>{{ blog.summary }}
+
+          </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+  {% endblock %}

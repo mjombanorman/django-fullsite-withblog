@@ -1,0 +1,8 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+{{ blog.title}}
+<br><br>
+<img src="{{ blog.image.url }}" class="rounded" width="50%" height="40%" alt=""><br>
+
+{{ blog.body | safe }}
+{% endblock %}
